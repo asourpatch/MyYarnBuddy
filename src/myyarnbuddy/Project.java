@@ -6,6 +6,8 @@ package myyarnbuddy;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -26,6 +28,16 @@ public class Project {
     private ArrayList<Yarn> yarnList;
     private LocalDate start, finish;
     private Component component;
+    
+    public Project(){
+        this.name = null;
+        this.yarnList = new ArrayList<Yarn>();
+        this.size = null;
+        this.craft = null;
+        this.start = LocalDate.now();
+        this.finish = null;
+        this.component = null;
+    }
     
     public Project(String name, ArrayList<Yarn> yarnList, String size, String craft) {
         this.name = name;

@@ -17,62 +17,84 @@ import javafx.stage.Stage;
  * @author Amanda
  */
 public class SceneController {
-    // @FXML
-    
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private Model model;
+    
+    public void initModel(Model m){
+        if(this.model != null){
+            throw new IllegalStateException("Mdoel can only be initialized once");
+        }
+        this.model = m;
+    }
     
     public void switchToMain(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+        root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("stylesheet1.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
     
     public void switchToNewProject(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("NewProject.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("NewProject.fxml"));
+        root = loader.load();
+        
+        NewProjectController npc = loader.getController();
+        npc.initModel(model);
+        npc.getSC(this);
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        //scene.getStylesheets().add(getClass().getResource("stylesheet2.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
     
     public void switchToCurrProj(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("CurrProject.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrProject.fxml"));
+        root = loader.load();
+        
+        CurrProjectController cpc = loader.getController();
+        cpc.initModel(model);
+        cpc.getSC(this);
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        //scene.getStylesheets().add(getClass().getResource("stylesheet3.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
     
     public void switchToWIPPage(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("WIPPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("WIPPage.fxml"));
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        //scene.getStylesheets().add(getClass().getResource("stylesheet4.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
     
     public void switchToCompProjPage(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("CompProjPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("CompProjPage.fxml"));
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        //scene.getStylesheets().add(getClass().getResource("stylesheet5.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
     
     public void switchToCompProjDetails(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("CompProjDetails.fxml"));
+        root = FXMLLoader.load(getClass().getResource("CompProjDetails.fxml"));
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        //scene.getStylesheets().add(getClass().getResource("stylesheet6.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

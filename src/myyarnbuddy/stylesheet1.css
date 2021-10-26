@@ -12,7 +12,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 #title {
-    -fx-fill: "white";
+    -fx-text-fill: "white";
 }
 
 #startNewBtn {
