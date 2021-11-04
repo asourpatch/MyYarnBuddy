@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package myyarnbuddy;
+package myyarnbuddy.java.controllers;
 
+import myyarnbuddy.java.model.Model;
+import myyarnbuddy.java.controllers.AlertBoxController;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -28,6 +30,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import myyarnbuddy.java.model.Project;
+import myyarnbuddy.java.model.Yarn;
 
 /**
  *
@@ -63,6 +67,8 @@ public class NewProjectController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        sDate.setValue(LocalDate.now());
+        craftType = "CROCHET";
     }
     
     public void initModel(Model m){
@@ -81,17 +87,33 @@ public class NewProjectController implements Initializable{
         String name = newProjName.getText();
         String size = newSize.getText();
         LocalDate date = sDate.getValue();
+        
+        // true is empty
+        boolean nbool = false;
+        boolean ybool = yarnList.isEmpty();
+        boolean sbool = false;
+        if(name.equals("")){
+            nbool = true;
+        } if(size.equals("")){
+            sbool = true;
+        }
+        
+        if(nbool == true || ybool == true || sbool == true){
+            AlertBoxController abc = new AlertBoxController();
+            abc.display(nbool, ybool, sbool);
+            return;
+        }
+       
         this.newProject = new Project(name, yarnList, size, craftType);
         this.newProject.setStartDate(date);
-        model.getProjectList().add(newProject);
-        model.setCurProject(newProject);
+        model.setCurrProject(newProject);
         sc.switchToCurrProj(event);
     }
     
     @FXML
     public void addingYarnToList() throws IOException{
         Stage yarnStage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("YarnBox.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myyarnbuddy/resources/view/YarnBox.fxml"));
         Parent yarnRoot = loader.load();
         Scene yarnScene = new Scene(yarnRoot);
         

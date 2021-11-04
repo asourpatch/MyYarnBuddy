@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myyarnbuddy.SceneController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myyarnbuddy.java.controllers.CompProjPageController">
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="WORK IN PROGRESS PROJECTS">
+            <Label text="COMPLETED PROJECTS">
                <font>
                   <Font size="24.0" />
                </font>
@@ -21,24 +21,24 @@
                   <Insets top="45.0" />
                </VBox.margin>
             </Label>
-            <ListView prefHeight="200.0" prefWidth="357.0">
+            <ListView fx:id="projectListView" prefHeight="200.0" prefWidth="357.0">
                <VBox.margin>
                   <Insets bottom="10.0" left="80.0" right="80.0" top="10.0" />
                </VBox.margin>
             </ListView>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="CONTINUE">
+                  <Button fx:id="viewBtn" mnemonicParsing="false" onAction="#viewProject" text="VIEW">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="DELETE">
+                  <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteProject" text="DELETE">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#switchToMain" text="BACK">
+                  <Button fx:id="backBtn" mnemonicParsing="false" onAction="#backToMain" text="BACK">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>

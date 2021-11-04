@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package myyarnbuddy;
+package myyarnbuddy.java.controllers;
 
+import myyarnbuddy.java.model.Yarn;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,18 +34,7 @@ public class YarnBoxController {
         return newYarn;
     }
     
-    public void openYarnBox() throws IOException{
-        yarnStage = new Stage();
-        Parent root1 = FXMLLoader.load(getClass().getResource("YarnBox.fxml"));
-        Scene scene1 = new Scene(root1);
-        
-        yarnStage.initModality(Modality.APPLICATION_MODAL);
-        yarnStage.setTitle("Adding to Yarn List");
-        
-        yarnStage.setScene(scene1);
-        yarnStage.showAndWait();
-    }
-    
+    @FXML
     public void savingYarnToBox(){
         String name = yname.getText();
         String color = ycolor.getText();
@@ -57,6 +47,7 @@ public class YarnBoxController {
         yarnStage.close();
     }
     
+    @FXML
      public void closeBox(){
         this.newYarn = null;
         yarnStage = (Stage) yCancelBtn.getScene().getWindow();

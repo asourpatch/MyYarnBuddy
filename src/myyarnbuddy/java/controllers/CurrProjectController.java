@@ -2,23 +2,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package myyarnbuddy;
+package myyarnbuddy.java.controllers;
 
+import myyarnbuddy.java.model.Component;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleButton;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import myyarnbuddy.java.model.Model;
+import myyarnbuddy.java.model.Project;
 
 /**
  *
  * @author Amanda
  */
-public class CurrProjectController implements Initializable{
+public class CurrProjectController {
     private Model model;
     private Project project;
     private Component component;
@@ -36,13 +44,9 @@ public class CurrProjectController implements Initializable{
     @FXML
     private Label typeLabel;
     
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-    }
-    
     public void initModel(Model m){
         if(this.model != null){
-            throw new IllegalStateException("Mdoel can only be initialized once");
+            throw new IllegalStateException("Model can only be initialized once");
         }
         this.model = m;
         
@@ -59,26 +63,26 @@ public class CurrProjectController implements Initializable{
     public void getSC(SceneController sc){
         this.sc = sc;
     }
-
+    
     @FXML
-    void changeTypeBtn(ActionEvent event) {
+    public void changeTypeBtn(ActionEvent event) {
         component.setType(component.oppType());
         typeBtn.setText(component.oppType());
         typeLabel.setText(component.getType());
     }
 
     @FXML
-    void completeBtn(ActionEvent event) throws IOException {
+    public void completeBtn(ActionEvent event) throws IOException {
         component.setNotes(notesBox.getText());
         project.done();
         model.getCompProjectList().add(project);
         model.getProjectList().remove(project);
-        model.setCurProject(null);
+        model.setCurrProject(null);
         sc.switchToMain(event);
     }
 
     @FXML
-    void decrementBtn(ActionEvent event) {
+    public void decrementBtn(ActionEvent event) {
         if(counter == 0){
             return;
         } else{
@@ -87,19 +91,60 @@ public class CurrProjectController implements Initializable{
             component.setCount(counter);
         }
     }
-
+ 
+    private Stage editStage;
     @FXML
-    void incrementBtn(ActionEvent event) {
+    public void editBtn(ActionEvent event) throws IOException{
+        editStage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myyarnbuddy/resources/view/EditCurrProj.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        
+        EditCurrProjController ecpc = loader.getController();
+        ecpc.setProject(project);
+
+        editStage.initModality(Modality.APPLICATION_MODAL);
+        editStage.setTitle("Editing Project Details");
+        
+        editStage.setScene(scene);
+        editStage.showAndWait();
+        
+        if(ecpc.getProject() == null){
+            return;
+        }
+        
+        Project ecpcProject = ecpc.getProject();
+        project.setName(ecpcProject.getName());
+        pName.setText(ecpcProject.getName());
+        project.setYarnList(ecpcProject.getYarnList());
+        project.setCraft(ecpcProject.getCraft());
+        project.setSize(ecpcProject.getSize());
+        project.setStartDate(ecpcProject.getStartDate());
+    }
+    
+    @FXML
+    public void incrementBtn(ActionEvent event) {
         counter++;
         count.setText(Integer.toString(counter));
         component.setCount(counter);
     }
 
     @FXML
-    void resetBtn(ActionEvent event) {
+    public void resetBtn(ActionEvent event) {
         counter = 0;
         count.setText("0");
         component.setCount(0);
     }
+    
+    @FXML
+    public void saveQuitBtn(ActionEvent event) throws IOException{
+        if(!model.getProjectList().contains(project)){
+            model.getProjectList().add(project);
+        }
+        model.setCurrProject(null);
+        sc.switchToMain(event);
+    }
+    
+    
     
 }

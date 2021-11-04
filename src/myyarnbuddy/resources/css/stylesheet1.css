@@ -1,0 +1,36 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 15, 2021, 2:38:50 AM
+    Author     : Amanda
+*/
+
+.root {
+    -fx-background-color: #3A606E; 
+}
+
+#title {
+    -fx-text-fill: "white";
+}
+
+.button {
+    
+}
+
+#startNewBtn {
+    
+}
+
+#wIPBtn {
+    
+}
+
+#compBtn {
+    
+}
+
+#quitBtn {
+    
+}

@@ -1,5 +1,6 @@
-package myyarnbuddy;
+package myyarnbuddy.java.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -11,18 +12,19 @@ import java.util.ArrayList;
  *
  * @author Amanda
  */
-public class Model {
+public class Model implements Serializable{
     private ArrayList<Project> projectList;
     private ArrayList<Project> completeProjectList;
-    private ArrayList<Yarn> newYarnList;
     private Project currentProject;
-    private Yarn newYarn;
     
     public Model(){
         this.projectList = new ArrayList<Project>();
         this.completeProjectList = new ArrayList<Project>();
-        this.newYarnList = new ArrayList<Yarn>();
         this.currentProject = null;
+    }
+    
+    public void setProjList(ArrayList<Project> p){
+        this.projectList = p;
     }
     
     public ArrayList<Project> getProjectList(){
@@ -37,6 +39,10 @@ public class Model {
         this.projectList.remove(p);
     }
     
+    public void setCompProjList(ArrayList<Project> p){
+        this.completeProjectList = p;
+    }
+    
     public ArrayList<Project> getCompProjectList(){
         return this.completeProjectList;
     }
@@ -49,31 +55,11 @@ public class Model {
         this.completeProjectList.remove(p);
     }
     
-    public ArrayList<Yarn> getNewYarnList(){
-        return this.newYarnList;
-    }
-    
-    public void addYarnToList(Yarn y){
-        this.newYarnList.add(y);
-    }
-    
-    public void removeYarnFromList(Yarn y){
-        this.newYarnList.remove(y);
-    }
-    
     public Project getCurrProject(){
        return this.currentProject;
     }
     
-    public void setCurProject(Project p) {
+    public void setCurrProject(Project p) {
        this.currentProject = p;
-    }
-    
-    public Yarn getNewYarn(){
-        return this.newYarn;
-    }
-    
-    public void setNewYarn(Yarn y){
-        this.newYarn = y;
     }
 }

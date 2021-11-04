@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package myyarnbuddy;
+package myyarnbuddy.java.model;
 
+import myyarnbuddy.java.model.Component;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
@@ -13,7 +15,7 @@ import javafx.collections.ObservableList;
  *
  * @author Amanda
  */
-public class Project {
+public class Project implements Serializable{
     /*
      * name = project name
      * yarnList = list of yarn used
@@ -34,7 +36,7 @@ public class Project {
         this.yarnList = new ArrayList<Yarn>();
         this.size = null;
         this.craft = null;
-        this.start = LocalDate.now();
+        this.start = null;
         this.finish = null;
         this.component = null;
     }
@@ -45,7 +47,7 @@ public class Project {
         this.size = size;
         this.progress = WIP;
         this.craft = craft;
-        this.start = LocalDate.now();
+        this.start = null;
         this.finish = null;
         this.component = new Component();
     }
