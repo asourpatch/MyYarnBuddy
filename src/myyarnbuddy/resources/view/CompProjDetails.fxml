@@ -18,9 +18,9 @@
    <children>
       <GridPane layoutX="1.0" prefHeight="400.0" prefWidth="601.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="151.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="160.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="99.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="250.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="241.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints />
@@ -39,7 +39,7 @@
                   <Insets right="30.0" />
                </padding>
                <font>
-                  <Font size="18.0" />
+                  <Font name="Century Gothic" size="18.0" />
                </font>
             </Label>
             <ListView fx:id="yarnListView" prefHeight="80.0" prefWidth="293.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
@@ -48,7 +48,7 @@
                   <Insets right="30.0" />
                </padding>
                <font>
-                  <Font size="18.0" />
+                  <Font name="Century Gothic" size="18.0" />
                </font>
             </Label>
             <Label text="Hook/Needle:" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
@@ -56,7 +56,7 @@
                   <Insets right="30.0" />
                </padding>
                <font>
-                  <Font size="18.0" />
+                  <Font name="Century Gothic" size="18.0" />
                </font>
             </Label>
             <Label text="Start Date:" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
@@ -64,7 +64,7 @@
                   <Insets right="30.0" />
                </padding>
                <font>
-                  <Font size="18.0" />
+                  <Font name="Century Gothic" size="18.0" />
                </font>
             </Label>
             <Label text="Finish Date:" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
@@ -72,25 +72,31 @@
                   <Insets right="30.0" />
                </padding>
                <font>
-                  <Font size="18.0" />
+                  <Font name="Century Gothic" size="18.0" />
                </font>
             </Label>
             <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveProject" text="SAVE &amp; QUIT" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" text="DONE" GridPane.columnIndex="2" GridPane.rowIndex="8">
+            <Button mnemonicParsing="false" onAction="#done" text="DONE" GridPane.columnIndex="2" GridPane.rowIndex="8">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
             </Button>
             <Label text="Project Name:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <padding>
                   <Insets right="30.0" />
                </padding>
                <font>
-                  <Font size="18.0" />
+                  <Font name="Century Gothic" size="18.0" />
                </font>
             </Label>
             <TextField fx:id="size" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
@@ -98,18 +104,36 @@
             <DatePicker fx:id="fDate" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
             <Label text="COMPLETED" GridPane.columnSpan="3" GridPane.halignment="CENTER">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="Rockwell Bold" size="20.0" />
                </font>
             </Label>
             <TextField fx:id="pName" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <Button fx:id="addYarnBtn" mnemonicParsing="false" onAction="#addYarn" text="ADD YARN" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="removeYarnBtn" mnemonicParsing="false" onAction="#removeYarn" text="REMOVE YARN" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="addYarnBtn" mnemonicParsing="false" onAction="#addYarn" text="ADD YARN" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></Button>
+            <Button fx:id="removeYarnBtn" mnemonicParsing="false" onAction="#removeYarn" text="REMOVE YARN" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin></Button>
             <RadioButton fx:id="crochetBtn" mnemonicParsing="false" onAction="#getCraftType" text="Crochet" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <toggleGroup>
                   <ToggleGroup fx:id="craft" />
                </toggleGroup>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
             </RadioButton>
-            <RadioButton fx:id="knittingBtn" mnemonicParsing="false" onAction="#getCraftType" text="Knitting" toggleGroup="$craft" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <RadioButton fx:id="knittingBtn" mnemonicParsing="false" onAction="#getCraftType" text="Knitting" toggleGroup="$craft" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font></RadioButton>
          </children>
       </GridPane>
    </children>

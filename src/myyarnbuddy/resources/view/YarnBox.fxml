@@ -31,45 +31,69 @@
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
             </Label>
             <Label text="Color:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
             </Label>
             <Label text="Weight:" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
             </Label>
             <Label text="Content:" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
             </Label>
             <TextField fx:id="yname" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" right="60.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
             </TextField>
             <TextField fx:id="ycolor" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="10.0" right="60.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
             </TextField>
             <TextField fx:id="yweight" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="10.0" right="60.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
             </TextField>
             <TextField fx:id="ycontent" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="10.0" right="60.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
             </TextField>
             <Label alignment="CENTER" text="ENTER YARN DETAILS" GridPane.columnSpan="3" GridPane.halignment="CENTER">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="Rockwell Bold" size="24.0" />
                </font>
                <padding>
                   <Insets top="15.0" />
@@ -82,11 +106,17 @@
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
             </Button>
             <Button fx:id="yCancelBtn" mnemonicParsing="false" onAction="#closeBox" text="CANCEL" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
             </Button>
          </children>
       </GridPane>

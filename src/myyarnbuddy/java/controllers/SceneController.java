@@ -73,7 +73,7 @@ public class SceneController implements Serializable{
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheet1.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheet.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -91,7 +91,7 @@ public class SceneController implements Serializable{
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        //scene.getStylesheets().add(getClass().getResource("stylesheet2.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheet.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -108,8 +108,8 @@ public class SceneController implements Serializable{
         cpc.getSC(this);
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        //scene.getStylesheets().add(getClass().getResource("stylesheet3.css").toExternalForm());
+        scene = new Scene(root);     
+        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheet.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -127,7 +127,7 @@ public class SceneController implements Serializable{
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        //scene.getStylesheets().add(getClass().getResource("stylesheet4.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheet.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -145,7 +145,7 @@ public class SceneController implements Serializable{
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        //scene.getStylesheets().add(getClass().getResource("stylesheet5.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheet.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -163,7 +163,7 @@ public class SceneController implements Serializable{
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        //scene.getStylesheets().add(getClass().getResource("stylesheet6.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheet.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

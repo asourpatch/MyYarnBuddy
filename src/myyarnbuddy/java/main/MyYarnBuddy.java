@@ -66,12 +66,13 @@ public class MyYarnBuddy extends Application implements Serializable{
         
         Scene scene = new Scene(root);
 
-        String css = getClass().getResource("/myyarnbuddy/resources/css/stylesheet1.css").toExternalForm();
+        String css = getClass().getResource("/myyarnbuddy/resources/css/stylesheet.css").toExternalForm();
         scene.getStylesheets().add(css);
 
         stage.setTitle("MyYarnBuddy");
 
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
     

@@ -8,15 +8,18 @@ import myyarnbuddy.java.model.Component;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myyarnbuddy.java.model.Model;
@@ -40,7 +43,7 @@ public class CurrProjectController {
     @FXML
     private Label pName;
     @FXML
-    private ToggleButton typeBtn;
+    private Button typeBtn;
     @FXML
     private Label typeLabel;
     
@@ -83,6 +86,10 @@ public class CurrProjectController {
 
     @FXML
     public void decrementBtn(ActionEvent event) {
+        decrement();
+    }
+    
+    private void decrement(){
         if(counter == 0){
             return;
         } else{
@@ -102,11 +109,14 @@ public class CurrProjectController {
         
         EditCurrProjController ecpc = loader.getController();
         ecpc.setProject(project);
+        
+        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheet.css").toExternalForm());
 
         editStage.initModality(Modality.APPLICATION_MODAL);
         editStage.setTitle("Editing Project Details");
         
         editStage.setScene(scene);
+        editStage.setResizable(false);
         editStage.showAndWait();
         
         if(ecpc.getProject() == null){
@@ -124,6 +134,10 @@ public class CurrProjectController {
     
     @FXML
     public void incrementBtn(ActionEvent event) {
+        increment();
+    }
+    
+    private void increment(){
         counter++;
         count.setText(Integer.toString(counter));
         component.setCount(counter);
@@ -141,10 +155,9 @@ public class CurrProjectController {
         if(!model.getProjectList().contains(project)){
             model.getProjectList().add(project);
         }
+        component.setNotes(notesBox.getText());
         model.setCurrProject(null);
         sc.switchToMain(event);
     }
-    
-    
-    
+  
 }

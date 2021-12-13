@@ -82,6 +82,7 @@ public class NewProjectController implements Initializable{
         this.sc = sc;
     }
     
+    
     @FXML
     public void startProject(ActionEvent event) throws IOException{
         String name = newProjName.getText();
@@ -117,12 +118,15 @@ public class NewProjectController implements Initializable{
         Parent yarnRoot = loader.load();
         Scene yarnScene = new Scene(yarnRoot);
         
+        yarnScene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheetpopout.css").toExternalForm());
+        
         YarnBoxController ybc = loader.getController();
 
         yarnStage.initModality(Modality.APPLICATION_MODAL);
         yarnStage.setTitle("Adding to Yarn List");
         
         yarnStage.setScene(yarnScene);
+        yarnStage.setResizable(false);
         yarnStage.showAndWait();
         
         Yarn newYarn = ybc.getYarn();

@@ -38,10 +38,14 @@ public class AlertBoxController {
         
         Scene scene = new Scene(root);
         
+        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheetpopout.css").toExternalForm());
+
+        
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Error");
         
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.showAndWait();
     }
     
@@ -54,10 +58,13 @@ public class AlertBoxController {
         
         Scene scene = new Scene(root);
         
+        scene.getStylesheets().add(getClass().getResource("/myyarnbuddy/resources/css/stylesheetpopout.css").toExternalForm());
+
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Are You Sure?");
         
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.showAndWait();
         
         return abc.getStatus();
@@ -66,11 +73,11 @@ public class AlertBoxController {
     public void setLabel(boolean n, boolean y, boolean s){
         String errorMessage = "";
         if(n) {
-            errorMessage += "Project name empty.\n";
+            errorMessage += "Project name is empty.\n";
         }if(y){
-            errorMessage += "Yarn list empty.\n";
+            errorMessage += "Yarn list is empty.\n";
         }if(s){
-            errorMessage += "Hook/Needle size empty.\n";
+            errorMessage += "Hook/Needle size is empty.\n";
         }
         
         errorLabel.setText(errorMessage);

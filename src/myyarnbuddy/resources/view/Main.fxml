@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #83B5D1;" stylesheets="@../css/stylesheet1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myyarnbuddy.java.controllers.SceneController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myyarnbuddy.java.controllers.SceneController">
    <children>
       <GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
         <columnConstraints>
@@ -22,27 +22,27 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="title" style="-fx-font-weight: 900; -fx-font-size: 3em; -fx-text-fill: White; -fx-effect: dropshadow(gaussian,  #ECC8AE, 10, 0.5, 0.0, 0.0);" stylesheets="@../css/stylesheet1.css" text="My Yarn Buddy :)" textAlignment="CENTER" GridPane.halignment="CENTER">
+            <Label fx:id="title" text="My Yarn Buddy :)" textAlignment="CENTER" GridPane.halignment="CENTER">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Rockwell Bold" size="36.0" />
                </font>
             </Label>
-            <Button fx:id="startNewBtn" minWidth="300.0" mnemonicParsing="false" onAction="#switchToNewProject" prefHeight="40.0" style="-fx-background-color: #3A606E; -fx-text-fill: white;" stylesheets="@../css/stylesheet1.css" text="START NEW PROJECT" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="startNewBtn" minWidth="300.0" mnemonicParsing="false" onAction="#switchToNewProject" prefHeight="40.0" text="START NEW PROJECT" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe UI Black" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="wIPBtn" minWidth="300.0" mnemonicParsing="false" onAction="#switchToWIPPage" prefHeight="40.0" style="-fx-background-color: #3A606E; -fx-text-fill: white;" stylesheets="@../css/stylesheet1.css" text="WIP PROJECTS" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="wIPBtn" minWidth="300.0" mnemonicParsing="false" onAction="#switchToWIPPage" prefHeight="40.0" text="WIP PROJECTS" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font name="Segoe UI Black" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="compProjBtn" minWidth="300.0" mnemonicParsing="false" onAction="#switchToCompProjPage" prefHeight="40.0" style="-fx-background-color: #3A606E; -fx-text-fill: white;" stylesheets="@../css/stylesheet1.css" text="COMPLETED PROJECTS" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button fx:id="compProjBtn" minWidth="300.0" mnemonicParsing="false" onAction="#switchToCompProjPage" prefHeight="40.0" text="COMPLETED PROJECTS" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe UI Black" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="quitBtn" minWidth="300.0" mnemonicParsing="false" onAction="#quitBtn" prefHeight="40.0" style="-fx-background-color: #3A606E; -fx-text-fill: white;" stylesheets="@../css/stylesheet1.css" text="SAVE &amp; QUIT" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+            <Button fx:id="quitBtn" minWidth="300.0" mnemonicParsing="false" onAction="#quitBtn" prefHeight="40.0" text="SAVE &amp; QUIT" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
                   <Font name="Segoe UI Black" size="18.0" />
                </font>

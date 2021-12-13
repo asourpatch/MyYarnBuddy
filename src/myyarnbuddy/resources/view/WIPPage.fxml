@@ -15,7 +15,7 @@
          <children>
             <Label text="WORK IN PROGRESS PROJECTS">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Rockwell Bold" size="24.0" />
                </font>
                <VBox.margin>
                   <Insets top="45.0" />
@@ -32,16 +32,25 @@
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
                   </Button>
                   <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteProject" text="DELETE">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
                   </Button>
                   <Button fx:id="backBtn" mnemonicParsing="false" onAction="#backToMain" text="BACK">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>
