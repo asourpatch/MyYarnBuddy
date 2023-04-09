@@ -124,6 +124,9 @@ public class CurrProjectController {
         }
         
         Project ecpcProject = ecpc.getProject();
+        if(ecpcProject == null){
+            System.out.println("null edit current project");
+        }
         project.setName(ecpcProject.getName());
         pName.setText(ecpcProject.getName());
         project.setYarnList(ecpcProject.getYarnList());
